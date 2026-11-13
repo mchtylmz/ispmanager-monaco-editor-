@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+reports/
+node_modules/
+dist/
+
+# Local metadata, credentials and diagnostic exports
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.log
+*.har
+
+# Historical private server inventory; retain locally, do not publish
+/docs/FAZ_0.md

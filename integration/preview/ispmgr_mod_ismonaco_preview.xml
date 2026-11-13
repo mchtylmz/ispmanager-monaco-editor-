@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+  <handler name="ismonaco_preview.sh" type="xml">
+    <event name="file.edit" after="yes"/>
+  </handler>
+</mgrdata>

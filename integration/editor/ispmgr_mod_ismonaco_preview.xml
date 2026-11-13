@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+  <mainmenu level="30"><modernmenu><node name="ismonaco_settings_group" type="noname">
+    <node name="ismonaco.settings" action="ismonaco.settings" type="form" favorite="yes"/>
+  </node></modernmenu></mainmenu>
+  <handler name="ismonaco_0_2_5.sh" type="xml">
+    <event name="file.edit" after="yes"/>
+    <func name="ismonaco.settings"/>
+  </handler>
+  <metadata name="ismonaco.settings" type="form" mgr="ispmgr">
+    <form>
+      <field name="theme"><select name="theme" required="yes"/></field>
+      <field name="font_size"><select name="font_size" required="yes"/></field>
+      <field name="wrap"><select name="wrap" required="yes"/></field>
+      <field name="minimap"><select name="minimap" required="yes"/></field>
+      <field name="fullscreen"><select name="fullscreen" required="yes"/></field>
+      <field name="height"><select name="height" required="yes"/></field>
+    </form>
+    <buttons><button name="ok" type="ok"/><button name="cancel" type="cancel"/></buttons>
+  </metadata>
+  <lang name="tr">
+    <messages name="desktop"><msg name="modernmenu_ismonaco_settings_group">Monaco Editor</msg><msg name="modernmenu_ismonaco.settings">Monaco ayarları</msg></messages>
+    <messages name="ismonaco.settings"><msg name="title">Monaco — Sunucu varsayılanları</msg><msg name="theme">Tema</msg><msg name="font_size">Yazı boyutu</msg><msg name="wrap">Satır kaydır</msg><msg name="minimap">Kod haritası</msg><msg name="fullscreen">Varsayılan tam ekran</msg><msg name="height">Editör yüksekliği</msg><msg name="msg_ok">Kaydet</msg><msg name="msg_cancel">Kapat</msg></messages>
+    <messages name="mgrerror_ismonaco_config"><msg name="msg_error_ismonaco_config">Ayarlar kaydedilemedi. Değerleri ve eklentinin yapılandırma izinlerini kontrol edin.</msg></messages>
+  </lang>
+  <lang name="en">
+    <messages name="desktop"><msg name="modernmenu_ismonaco_settings_group">Monaco Editor</msg><msg name="modernmenu_ismonaco.settings">Monaco settings</msg></messages>
+    <messages name="ismonaco.settings"><msg name="title">Monaco — Server defaults</msg><msg name="theme">Theme</msg><msg name="font_size">Font size</msg><msg name="wrap">Word wrap</msg><msg name="minimap">Minimap</msg><msg name="fullscreen">Open in full screen by default</msg><msg name="height">Editor height</msg><msg name="msg_ok">Save</msg><msg name="msg_cancel">Close</msg></messages>
+    <messages name="mgrerror_ismonaco_config"><msg name="msg_error_ismonaco_config">Settings could not be saved. Check the values and plugin configuration permissions.</msg></messages>
+  </lang>
+</mgrdata>

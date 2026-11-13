@@ -1,0 +1,10 @@
+{
+  "status": "OK",
+  "httpStatus": 200,
+  "format": "json",
+  "metadataKeyPresent": true,
+  "previewDataKeyPresent": true,
+  "previewNamedElementPresent": true,
+  "htmlDataKeyPresent": true,
+  "errorKeyPresent": false
+}

@@ -1,0 +1,116 @@
+{
+  "status": "OK",
+  "function": "file.edit",
+  "metadata": [
+    {
+      "name": "file.edit",
+      "type": "form",
+      "mgr": "core"
+    }
+  ],
+  "controls": [
+    {
+      "tag": "field",
+      "name": "ismonaco_preview",
+      "fullwidth": "yes",
+      "noname": "yes"
+    },
+    {
+      "tag": "htmldata",
+      "name": "ismonaco_preview"
+    },
+    {
+      "tag": "field",
+      "name": "encode_fault_field",
+      "fullwidth": "yes"
+    },
+    {
+      "tag": "field",
+      "name": "full_filepath"
+    },
+    {
+      "tag": "field",
+      "name": "encode_warning",
+      "fullwidth": "yes"
+    },
+    {
+      "tag": "field",
+      "name": "encoding"
+    },
+    {
+      "tag": "select",
+      "name": "encoding"
+    },
+    {
+      "tag": "field",
+      "name": "rowcount"
+    },
+    {
+      "tag": "select",
+      "name": "rowcount"
+    },
+    {
+      "tag": "field",
+      "name": "fdata",
+      "fullwidth": "yes"
+    },
+    {
+      "tag": "textarea",
+      "name": "fdata",
+      "editor": "yes",
+      "environ": "no"
+    },
+    {
+      "tag": "input",
+      "name": "read_only",
+      "type": "hidden"
+    },
+    {
+      "tag": "input",
+      "name": "cr",
+      "type": "hidden"
+    },
+    {
+      "tag": "input",
+      "name": "encode_fault",
+      "type": "hidden"
+    },
+    {
+      "tag": "input",
+      "name": "show_rowcount",
+      "type": "hidden"
+    },
+    {
+      "tag": "input",
+      "name": "saveerror_trigger",
+      "type": "hidden"
+    },
+    {
+      "tag": "input",
+      "name": "highlight_content",
+      "type": "hidden"
+    },
+    {
+      "tag": "field",
+      "name": "savetime"
+    },
+    {
+      "tag": "input",
+      "name": "savetime",
+      "type": "text",
+      "readonly": "yes"
+    },
+    {
+      "tag": "field",
+      "name": "fsaveerrormsg"
+    }
+  ],
+  "fdata_nodes": 1,
+  "fdata_is_text": true,
+  "fdata_within_preview_limit": true,
+  "sok_present": false,
+  "sok_nonempty": false,
+  "ok_present": false,
+  "monaco_data_present": true,
+  "monaco_field_present": true
+}

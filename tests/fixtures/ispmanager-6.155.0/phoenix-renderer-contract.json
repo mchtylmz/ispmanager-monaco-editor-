@@ -1,0 +1,20 @@
+{
+  "panelVersion": "6.155.0",
+  "theme": "Phoenix",
+  "sourceFile": "chunk-BT1IY76K.js",
+  "sourceSha256": "ed9a9c803f50f9f325d74dd9fbf8acb60f24ef353b8818df3c3ae5c2e0cc6e40",
+  "unrenderedElement": "htmldata",
+  "supportedElement": "frame",
+  "formSelector": "isp-new-dynamic-form",
+  "wrapperSelector": "isp-form-view-element",
+  "bindingAttribute": "data-dynamic-form-element-id",
+  "previewBinding": "ismonaco_preview-frame",
+  "nativeFieldBinding": "fdata-code-element",
+  "nativeEditorSelector": "ace-editor",
+  "nativeValueAPI": "env.editor.getValue()",
+  "nativeWriteAPI": "env.editor.setValue(value, -1)",
+  "nativeReadOnlyAPI": "env.editor.getReadOnly()",
+  "nativeChangeAPI": "env.editor.on/off(change)",
+  "nativeSaveRoute": "isp-form-view-code-field keydown KeyS + ctrl/meta -> dynamicFormService.saveBtn -> handleButtonClick",
+  "nativeSaveServerAccepted": false
+}

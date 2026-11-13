@@ -1,0 +1,55 @@
+// Browser plugin not available; localhost Chrome with actual Monaco/Ace.
+import assert from 'node:assert/strict';
+import { pathToFileURL } from 'node:url';
+const { chromium }=await import(pathToFileURL(process.env.PLAYWRIGHT_MODULE));
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+const frame=()=>page.frameLocator('#preview-frame');
+try{
+ await page.goto('http://127.0.0.1:8766/markup');
+ await frame().locator('html[data-ready=true]').waitFor();
+ assert.equal(await page.title(),'Monaco yerel entegrasyon testi');
+ assert.equal(await frame().getByLabel('Dosya yolu',{exact:true}).innerText(),'/test/example.php');
+ assert.equal(await frame().locator('#escape-hint').isVisible(),true);
+ for(const id of ['native-editor','fullscreen','fullscreen-save'])assert.equal(await frame().locator('#'+id+' svg').count(),1);
+ const header=await frame().locator('#toolbar').boundingBox(),actions=await frame().locator('.actions').boundingBox();
+ assert.equal(actions.x+actions.width>1400,true);assert.equal(header.height<150,true);
+ const backgrounds=await frame().locator('#toolbar').evaluate(n=>({header:getComputedStyle(n).backgroundColor,body:getComputedStyle(document.documentElement).backgroundColor}));
+ assert.notEqual(backgrounds.header,backgrounds.body);
+ await frame().locator('.view-lines').click();await page.keyboard.press('Meta+ArrowUp');
+ for(let i=0;i<6;i++)await page.keyboard.press('ArrowDown');
+ await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowRight');
+ await frame().locator('#tag-pair').filter({hasText:'head: 7 ↔ 10'}).waitFor();
+ await frame().locator('.ismonaco-tag-match').first().waitFor();
+ assert.equal(await frame().locator('.ismonaco-tag-match').count(),2);
+ await page.screenshot({path:'/tmp/ismonaco-ergonomics-dark.png',fullPage:false});
+ await frame().getByLabel('Tema',{exact:true}).selectOption('light');
+ const light=await frame().locator('#toolbar').evaluate(n=>getComputedStyle(n).backgroundColor);
+ assert.notEqual(light,'rgb(255, 255, 255)');assert.notEqual(light,backgrounds.header);
+ await page.screenshot({path:'/tmp/ismonaco-ergonomics-light.png',fullPage:false});
+ // PHP strings must not be mistaken for markup; PHP braces still match.
+ await frame().locator('.view-lines').click();await page.keyboard.press('Meta+ArrowUp');
+ for(let i=0;i<2;i++)await page.keyboard.press('ArrowDown');
+ for(let i=0;i<9;i++)await page.keyboard.press('ArrowRight');
+ assert.equal(await frame().locator('#tag-pair').isVisible(),false);
+ await page.keyboard.press('Meta+ArrowUp');for(let i=0;i<3;i++)await page.keyboard.press('ArrowDown');
+ for(let i=0;i<8;i++)await page.keyboard.press('ArrowRight');
+ await frame().locator('.bracket-match').first().waitFor();
+ assert.equal(await frame().locator('.bracket-match').count(),2);
+ await frame().getByRole('button',{name:'Tam ekrandan çık',exact:true}).click();
+ assert.equal(await frame().locator('#escape-hint').isVisible(),false);
+ assert.equal(await frame().locator('#file-path').isVisible(),false);
+ assert.equal(await frame().locator('#fullscreen svg').count(),1);
+ await page.setViewportSize({width:390,height:844});
+ await frame().getByRole('button',{name:'Tam ekran',exact:true}).click();
+ await page.screenshot({path:'/tmp/ismonaco-ergonomics-mobile.png',fullPage:false});
+ assert.equal(await frame().locator('body').evaluate(n=>n.scrollWidth<=innerWidth),true);
+ await frame().getByRole('button',{name:'Metin editörü',exact:true}).click();
+ assert.equal(await page.locator('#native').isVisible(),true);
+ await frame().getByRole('button',{name:'Gelişmiş editöre geç',exact:true}).click();
+ assert.equal(await page.locator('#native').isVisible(),false);
+ assert.deepEqual(errors,[]);
+ console.log('ERGONOMICS_BROWSER_OK: bound file path; icons/right actions; compact contrast in dark/light; fullscreen Esc hint; real PHP/HTML tag pair excludes fake PHP tags; 1440/390px; native round-trip');
+}finally{await browser.close()}

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc func="ismonaco.phase0" lang="en">
+  <metadata name="ismonaco.phase0" type="form" decorated="yes">
+    <form nocancel="yes" nosubmit="yes">
+      <field fullwidth="yes" name="context">
+        <textdata name="context_value" type="msg" />
+      </field>
+      <field fullwidth="yes" name="mode">
+        <textdata name="mode_value" type="msg" />
+      </field>
+      <field fullwidth="yes" name="file_read">
+        <textdata name="file_read_value" type="msg" />
+      </field>
+      <field fullwidth="yes" name="file_write">
+        <textdata name="file_write_value" type="msg" />
+      </field>
+      <field fullwidth="yes" name="lsp">
+        <textdata name="lsp_value" type="msg" />
+      </field>
+      <field fullwidth="yes" name="session">
+        <textdata name="session_value" type="msg" />
+      </field>
+      <field fullwidth="yes" name="sandbox">
+        <textdata name="sandbox_value" type="msg" />
+      </field>
+    </form>
+  </metadata>
+  <messages>
+    <msg name="title">Monaco Phase 0 diagnostics</msg>
+    <msg name="context">Native panel context</msg>
+    <msg name="context_value">root / AUTH_LEVEL 30</msg>
+    <msg name="mode">Mode</msg>
+    <msg name="mode_value">Lab diagnostics only</msg>
+    <msg name="file_read">Site file access</msg>
+    <msg name="file_read_value">Disabled</msg>
+    <msg name="file_write">File saving</msg>
+    <msg name="file_write_value">Disabled</msg>
+    <msg name="lsp">Language server</msg>
+    <msg name="lsp_value">Disabled</msg>
+    <msg name="session">Session and CSRF transport</msg>
+    <msg name="session_value">Not verified</msg>
+    <msg name="sandbox">Sandbox enforcement</msg>
+    <msg name="sandbox_value">Not verified</msg>
+  </messages>
+</doc>

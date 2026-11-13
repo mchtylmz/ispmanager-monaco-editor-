@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+  <mainmenu level="30">
+    <modernmenu>
+      <node name="ismonaco_phase0_group" type="noname">
+        <node name="ismonaco.phase0"/>
+      </node>
+    </modernmenu>
+  </mainmenu>
+  <handler name="ismonaco_phase0.sh" type="xml">
+    <func name="ismonaco.phase0"/>
+  </handler>
+  <lang name="en">
+    <messages name="desktop">
+      <msg name="modernmenu_ismonaco.phase0">Monaco Phase 0 diagnostics</msg>
+    </messages>
+  </lang>
+  <lang name="tr">
+    <messages name="desktop">
+      <msg name="modernmenu_ismonaco.phase0">Monaco Faz 0 kontrolü</msg>
+    </messages>
+  </lang>
+</mgrdata>

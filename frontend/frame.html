@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; worker-src 'self' blob:; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>Monaco dosya görünümü</title>
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+  <section id="native-view" hidden aria-label="Editör geçişi">
+    <span id="native-status" role="status">Metin editörü etkin.</span>
+    <button id="advanced-editor" type="button">Gelişmiş editöre geç</button>
+  </section>
+  <header id="toolbar">
+    <div class="header-row">
+      <div class="document-info">
+        <div id="file-path" class="file-path" aria-label="Dosya yolu" hidden></div>
+        <p>Kaydetmek için panelin Kaydet / Kaydet ve kapat düğmelerini veya Ctrl/⌘+S kullanın.<span id="escape-hint" hidden> Tam ekrandan çıkmak için Esc tuşuna basabilirsiniz.</span></p>
+      </div>
+      <div class="actions" aria-label="Editör işlemleri">
+        <button id="fullscreen" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg><span id="fullscreen-label">Tam ekran</span></button>
+        <button id="native-editor" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 3 12l6 7M15 5l6 7-6 7"/></svg><span>Metin editörü</span></button>
+        <button id="fullscreen-save" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12l4 4v12a2 2 0 0 1-2 2ZM7 3v6h10V3M7 21v-8h10v8"/></svg><span>Kaydet</span></button>
+        <button id="fullscreen-save-close" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12l4 4v5M7 3v6h10V3M7 21v-8h6M15 17h7m-3-3 3 3-3 3"/></svg><span>Kaydet ve çık</span></button>
+      </div>
+    </div>
+    <div class="controls">
+      <label>Dil <select id="language" aria-label="Kod dili"></select></label>
+      <label>Tema <select id="theme" aria-label="Tema"><option value="light">Açık</option><option value="dark" selected>Koyu</option></select></label>
+      <label>Yazı <select id="font" aria-label="Yazı boyutu"><option>12</option><option selected>14</option><option>16</option><option>18</option><option>20</option></select></label>
+      <label><input id="wrap" type="checkbox" checked>Satır kaydır</label>
+      <label><input id="minimap" type="checkbox" checked>Kod haritası</label>
+      <label>Yükseklik <select id="height" aria-label="Editör yüksekliği"><option>620</option><option selected>760</option><option>900</option><option>1080</option></select></label>
+      <button id="find" type="button">Bul</button>
+      <button id="copy-buffer" type="button" hidden>Monaco metnini kopyala</button>
+    </div>
+  </header>
+  <main id="editor" aria-label="Dosya içeriği"></main>
+  <footer id="editor-footer"><span id="status" role="status">Monaco yükleniyor. Açılamazsa mevcut editör kullanılabilir kalır.</span><span id="mode">Bağlanıyor</span><span id="tag-pair" hidden></span><span id="position">Satır 1, sütun 1</span></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

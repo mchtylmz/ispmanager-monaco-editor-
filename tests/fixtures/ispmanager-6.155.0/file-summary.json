@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "name": "file",
+    "type": "list",
+    "key": "name",
+    "mgr": "ispmgr"
+  },
+  "buttons": [
+    {
+      "name": "new",
+      "func": "file.new",
+      "type": "new"
+    },
+    {
+      "name": "fileopen",
+      "func": "file.open",
+      "type": "edit"
+    },
+    {
+      "name": "edit",
+      "func": "file.edit",
+      "type": "edit",
+      "default": "yes"
+    },
+    {
+      "name": "delete",
+      "func": "file.delete",
+      "type": "group"
+    },
+    {
+      "name": "list",
+      "func": "file",
+      "type": "editlist",
+      "default": "yes"
+    },
+    {
+      "name": "download",
+      "func": "file.download",
+      "type": "groupdownload"
+    },
+    {
+      "name": "copyto",
+      "func": "file.copyto",
+      "type": "groupform"
+    },
+    {
+      "name": "settings",
+      "func": "file.settings",
+      "type": "new"
+    },
+    {
+      "name": "attr",
+      "func": "file.unixattr",
+      "type": "edit",
+      "default": "yes"
+    },
+    {
+      "name": "upload",
+      "func": "file.upload",
+      "type": "new"
+    },
+    {
+      "name": "folder",
+      "func": "file.folder",
+      "type": "new"
+    },
+    {
+      "name": "search",
+      "func": "file.search",
+      "type": "new"
+    },
+    {
+      "name": "pack",
+      "func": "file.pack",
+      "type": "groupform"
+    },
+    {
+      "name": "extract",
+      "func": "file.extract",
+      "type": "groupform"
+    },
+    {
+      "name": "list",
+      "func": "file",
+      "type": "editlist",
+      "default": "yes"
+    },
+    {
+      "name": "edit",
+      "func": "file.edit",
+      "type": "edit",
+      "default": "yes"
+    },
+    {
+      "name": "attr",
+      "func": "file.unixattr",
+      "type": "edit",
+      "default": "yes"
+    },
+    {
+      "name": "copyto",
+      "func": "file.copyto",
+      "type": "groupform"
+    },
+    {
+      "name": "pack",
+      "func": "file.pack",
+      "type": "groupform"
+    },
+    {
+      "name": "extract",
+      "func": "file.extract",
+      "type": "groupform"
+    },
+    {
+      "name": "context_avcheck",
+      "func": "file.avcheckparams",
+      "type": "groupform"
+    },
+    {
+      "name": "delete",
+      "func": "file.delete",
+      "type": "group"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "panelVersion": "6.155.0",
+  "theme": "Phoenix",
+  "sourceFile": "chunk-DL5dh_45.js",
+  "sourceSha256": "894c4de0e503c1723ae6b68a2c3856ebe125a7d8598780c466a48ac9ef44b6f0",
+  "method": "applyFormSubmitResponse",
+  "methodSha256": "5964e989a39bb0d532fd1ceffff64c48386b1cb929f2fcad545fcc622219e207",
+  "reportedStandaloneConfirmedByUser": true,
+  "oldCase": {
+    "release": "0.2.2",
+    "response": "ok only, no metadata",
+    "standaloneResult": "native method updates tab with success response; metadata lost"
+  },
+  "fixedCase": {
+    "response": "complete form with persisted values and success text, no ok redirect",
+    "standaloneResult": "native method updates tab with renderable form",
+    "normalResult": "same form remains open",
+    "errorResult": "complete form and visible error message; prior saved status removed"
+  },
+  "validationScope": "Actual baseline/new Python handlers and hash-pinned native JS submit method; local tab/render/JSON services are a test harness. No live authenticated panel POST."
+}
